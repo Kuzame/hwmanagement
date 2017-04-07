@@ -83,7 +83,7 @@ void main()
 		numbers-=done;
 		t-=(clock()-asdf)/1000 + fraction/1000;
 		tbank+=(clock()-asdf)/1000 + fraction/1000;
-		elapsed->hour= (tbank-(tbank%3600))/3600; elapsed->minute=(tbank-(tbank%60))/60; elapsed->second=tbank%60;
+		elapsed->hour= (tbank-(tbank%3600))/3600; elapsed->minute=((tbank-(tbank%60))/60)%60; elapsed->second=tbank%60;
 		if (t<0) numbers=0;
 		if (numbers>0) calculate(t, numbers, &remaining->hour, &remaining->minute, &remaining->second, &goal->minute, &goal->second);
 		if (done!=0) {tbank2=0; goal1->minute=goal->minute;goal1->second=goal->second;} else tbank2+=(clock()-asdf)/1000 + fraction/1000;
